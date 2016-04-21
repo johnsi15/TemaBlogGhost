@@ -1,0 +1,30 @@
+{{! Previous/next page links - only displayed on page 2+ }}
+
+
+{{! Mostramos todos los post o artículos que tenemos}}
+{{#foreach posts}}
+    <article class="{{post_class}} recuadro recuadro_table">
+        <div class="imagen-post"> 
+            <a href="{{url}}">{{#if image}} <img src="{{image}}"> {{else}}no-cover{{/if}} </a>
+        </div>
+        <header class="post-header">
+            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+        </header>
+        <section class="post-excerpt">
+            <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}"><strong>LEER MAS</strong></a></p>
+        </section>
+        <footer class="post-meta">
+             <time datetime="{{date format='YYYY-MM--DD'}}">{{date format="DD MMM YYYY"}}</time> 
+                {{#if tags}}en {{tags}}{{/if}} 
+        </footer>
+    </article>
+{{/foreach}}
+
+{{!-- Newsletter de mailchimp--}}
+{{> "newsletter"}}
+
+<!--End mc_embed_signup-->
+
+{{! Paginación de los articulos }}
+
+{{pagination}}

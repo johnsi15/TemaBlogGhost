@@ -1,0 +1,107 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+{{!-- Imagen del artículo--}}
+<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+    
+</header>
+
+<main class="content" role="main">
+    <article class="{{post_class}}">
+        {{!-- Encabezado del artículo--}}
+        <header class="post-header">
+            <h1 class="post-title">{{title}}</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}} 
+            </section>
+        </header>
+        {{!-- Contenido del artículo--}}
+        <section class="post-content">
+            {{content}}          
+        </section>
+
+        <footer class="post-footer">
+
+            {{!-- Redes sociales para compartir el artículo--}}
+            <section class="share">
+                <h4>Si te ha gustado éste artículo, te animo a compartirlo para que otros puedan leerlo :)</h4>
+                <a class="icon-twitter t" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook f" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+
+                <a class="icon-google-plus g" href="https://plus.google.com/share?url={{url absolute="true"}}"
+                   onclick="javascript:window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        {{! Everything inside the #author tags pulls data from the author }}
+        {{#author}}
+            {{!-- Logo del autor--}}
+            {{#if image}}
+            <figure class="author-image">
+                <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+            </figure>
+            {{/if}}
+
+            {{!-- Autor del artículo--}}
+            <section class="author">
+            
+                {{#if bio}}
+
+                {{else}}
+                    <p>¡Hola! Soy <strong><a href="{{url}}">{{name}}</a></strong>, autor del blog que estás leyendo dónde comparto tutoriales de programación en Python y artículos sobre tecnologías web en general. Si te gusta lo que lees, no dudes en suscribirte.</p>
+                    <p> Sígueme en Twitter en <a href="https://twitter.com/Jandrey15" target="_black"><strong>@Jandrey15</strong> </a>y en <a href="https://www.facebook.com/Jandrey15" target="_black"><strong>Facebook</strong></a></p>
+                {{/if}}
+                <div class="author-meta">
+                    {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
+                    {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+                </div>
+            </section>
+
+        {{/author}}
+            
+        </footer>
+    </article>
+        {{!-- Newsletter de mailchimp--}}
+        {{> "newsletter"}}
+    <article class="comentarios"> 
+
+        {{!-- Disqus - Comentarios s--}}
+        {{> "disqus"}}
+    </article>
+</main>
+
+{{!-- Mas articulos --}}
+<aside class="read-next">
+    {{#next_post}}
+    <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+        <section class="post">
+            <h2>{{title}}</h2>
+            <p>{{excerpt words="19"}}&hellip;</p>
+        </section>
+    </a>
+    {{/next_post}}
+    {{#prev_post}}
+    <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+        <section class="post">
+            <h2>{{title}}</h2>
+            <p>{{excerpt words="19"}}&hellip;</p>
+        </section>
+    </a>
+    {{/prev_post}}
+</aside>
+
+{{/post}}
+
+
