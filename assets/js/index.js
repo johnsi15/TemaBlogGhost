@@ -74,12 +74,24 @@
     /*var menu = $('.menu');
     var cuadro_offset = menu.offset();*/
     var posicion = 100;
+    var posicionActual, posicionNueva = 0;
     $(window).on('scroll', function() {
         if($(window).scrollTop() > posicion) {
-            $(".menu").css("background", "rgba(28,28,28,11)");
-        } else {
-            $(".menu").css("background", "linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%)");
+            //$(".menu").css("background", "rgba(28,28,28,11)");
+            $(".menu").fadeOut();
+        }else{
+            $(".menu").fadeIn();
+            //$(".menu").css("background", "linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%)");
         }
+        /*posicionActual = $(window).scrollTop();
+        if(posicionActual != 0){
+            if(posicionActual < posicionNueva){
+                $(".menu").fadeIn();//muestra menu
+            }else{
+                $(".menu").fadeOut();//oculta menu
+            }
+        }
+        posicionNueva = posicionActual*/
     });
 
 })(jQuery);

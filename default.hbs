@@ -8,7 +8,8 @@
     {{! Page Meta }}
     <title>{{meta_title}}</title>
     <meta name="description" content="{{meta_description}}" />
-
+    <meta name="robots" content="follow">
+    <meta name="googlebot" content="follow" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -58,7 +59,7 @@
         #formulario{background:#000;
             border-radius: 3%;
             color: #fff;
-            margin: 0 25%;
+            margin: 0 auto;
             width: 50%;
         }
         /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
@@ -128,6 +129,8 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
         }());
     </script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-571e2c971e48dff1"></script>
 
 </body>
 </html>
