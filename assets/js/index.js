@@ -83,15 +83,28 @@
             $(".menu").fadeIn();
             //$(".menu").css("background", "linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%)");
         }
-        /*posicionActual = $(window).scrollTop();
-        if(posicionActual != 0){
+        /*if($(window).scrollTop() > posicion){
+            posicionActual = $(window).scrollTop();
             if(posicionActual < posicionNueva){
                 $(".menu").fadeIn();//muestra menu
             }else{
                 $(".menu").fadeOut();//oculta menu
             }
-        }
-        posicionNueva = posicionActual*/
+            posicionNueva = posicionActual
+        };*/
+    });
+
+    $(window).scroll(function(){
+       if ($(this).scrollTop() > 100) {
+            $('.scrollup').fadeIn();
+       } else {
+            $('.scrollup').fadeOut();
+       }
+    });
+
+    $('.scrollup').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, 600);
+        return false;
     });
 
 })(jQuery);

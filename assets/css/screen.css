@@ -106,66 +106,6 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
 /* Import the font file with the icons in it */
-/* @font-face {
-    font-family: "casper-icons";
-    src:url("../fonts/casper-icons.eot?v=1");
-    src:url("../fonts/casper-icons.eot?v=1#iefix") format("embedded-opentype"),
-        url("../fonts/casper-icons.woff?v=1") format("woff"),
-        url("../fonts/casper-icons.ttf?v=1") format("truetype"),
-        url("../fonts/casper-icons.svg?v=1#icons") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
-
-Apply these base styles to all icons
-[class^="icon-"]:before, [class*=" icon-"]:before {
-    font-family: "casper-icons", "Open Sans", sans-serif;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    text-decoration: none !important;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-Each icon is created by inserting the correct character into the
-   content of the :before pseudo element. Like a boss.
-.icon-ghost:before {
-    content: "\f600";
-}
-.icon-feed:before {
-    content: "\f601";
-}
-.icon-twitter:before {
-    content: "\f602";
-    font-size: 1.1em;
-}
-.icon-google-plus:before {
-    content: "\f603";
-}
-.icon-facebook:before {
-    content: "\f604";
-}
-.icon-arrow-left:before {
-    content: "\f605";
-}
-.icon-stats:before {
-    content: "\f606";
-}
-.icon-location:before {
-    content: "\f607";
-    margin-left: -3px; Tracking fix
-}
-.icon-link:before {
-    content: "\f608";
-}
-.icon-menu:before {
-    content: "\f609";
-}
- */
 
 @font-face {
     font-family: 'icomoon';
@@ -328,7 +268,7 @@ h6 {
 }
 
 a {
-    color: #4A4A4A;
+    color: #2980b9;
     transition: color 0.3s ease;
 }
 
@@ -1316,7 +1256,7 @@ body:not(.post-template) .post-title {
    text column to break out. */
 .post-content img {
     display: block;
-    max-width: 126%;
+    max-width: 100%;
     height: auto;
     padding: 0.6em 0;
     /* Centers an image by (1) pushing its left edge to the
@@ -1434,7 +1374,7 @@ body:not(.post-template) .post-title {
     /* top: 6rem;
     right: 25%; */
     margin-top: 0;
-    /* width: 250px; */
+    width: 260px;
 }
 
 .redes-sociales a{
@@ -1894,7 +1834,7 @@ body:not(.post-template) .post-title {
 
 .site-footer {
     position: relative;
-    margin: 8rem 0 0 0;
+    margin: 0 0 0 0;
     padding: 4rem 0 3rem 15%;
     font-family: "Oswald", sans-serif;
     font-weight: 400;
@@ -1904,6 +1844,7 @@ body:not(.post-template) .post-title {
     font-size: 20px;
     background-color: #424242;
     clear: both;
+    border-top: 1px solid #2980b9;
 }
 
 .site-footer a {
@@ -1931,9 +1872,34 @@ body:not(.post-template) .post-title {
     display: none;
 }
 
+.scrollup{
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 50px;
+    right: 80px;
+    display: none;
+    z-index: 1500;
+    background-color: #000;
+    text-align: center;
+    line-height: 2;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 22px;
+    color: #fff;
+}
+
+.scrollup:hover{
+    color: #2980b9;
+}
+
 /* ----------------------Medias Queries------------------------ */
 
 @media only screen and (max-width: 1024px){
+    .scrollup{
+        display: none!important;
+    }
+
     .recuadro{
         margin: 2rem 0 0 1rem;
         padding: 0 .5em;

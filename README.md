@@ -1,4 +1,7 @@
-# Casper
+# Casper Modificado John Serrano
+_________________________________________________________________________
+
+Tema para el blog John Serrano
 
 The default theme for [Ghost](http://github.com/tryghost/ghost/).
 
